@@ -1,0 +1,30 @@
+<app-title-section
+  [title]="headerTitle"
+  [descp]="filesNumber"
+  [btnText]="btnText"
+  (onClickBtn)="openDialog()"
+></app-title-section>
+<div class="container-fluid contflu">
+  <div class="d-flex flex-wrap cv__container">
+    <h3 class="container__title">Cvs</h3>
+    <mat-form-field class="example-form-field" appearance="fill">
+      <mat-label>Clearable input</mat-label>
+      <input matInput type="text" [(ngModel)]="searchValue"  (keyup)="onSearchChange($event)">
+      <button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <br />
+    <div class="Cv__cont" *ngFor="let t of filteredcvs; let i = index">
+      <mat-icon class="Cv__delete" (click)="delete(t.id)">delete</mat-icon
+      ><br />
+      <mat-icon class="Cv__icon">folder</mat-icon>
+      <p class="folder__title">
+        {{ t.title }}
+      </p>
+      <p class="folder__desc">
+        {{ t.description }}
+      </p>
+    </div>
+  </div>
+</div>

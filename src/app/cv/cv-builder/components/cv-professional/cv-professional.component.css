@@ -1,0 +1,16 @@
+.job__date{
+    font-size: 15px;
+}
+.job__position{
+    font-size:17px;
+    font-weight: bold;
+}
+.job__place{
+    font-size: 16px;
+    font-weight:400;
+    margin-bottom: 10px;
+}
+.cv__form__input{
+    margin-right: 20px;
+    width: 25%;
+}

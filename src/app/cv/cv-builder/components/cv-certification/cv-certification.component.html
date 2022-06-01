@@ -1,0 +1,20 @@
+<div class="certif__container">
+    <h4>
+        {{title}}
+    </h4>
+    <p>
+       {{description}}
+    </p>
+</div>
+<div class="">
+    <div class="form-group" *ngIf="editable">
+        <textarea class="form-control about_text" 
+        [(ngModel)]="title" 
+        rows="1"></textarea>  
+    </div>
+    <div class="form-group" *ngIf="editable">
+        <textarea class="form-control about_text" 
+        [(ngModel)]="description" 
+        rows="1"></textarea>  
+    </div>
+</div>

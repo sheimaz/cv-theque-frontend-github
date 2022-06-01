@@ -1,0 +1,126 @@
+<div style="display: block;margin-top: 50px;">
+  <canvas
+    baseChart
+    [datasets]="radarChartData"
+    [options]="radarChartOptions"
+    [labels]="radarChartLabels"
+    [chartType]="radarChartType"
+  >
+  </canvas>
+</div>
+
+<div class="row mt-3" *ngIf="editable">
+  <div class="col">
+    <div class="lang">
+      <span class="lang__text">{{ AAC }}</span><br>
+      <mat-slider
+        class="lang__slider slide"
+        [disabled]="!editable"
+        [(ngModel)]="dataAAC"
+        (input)="onInputChange($event)"
+        step="1"
+        min="0"
+        max="100"
+      ></mat-slider>
+      {{dataAAC}}
+    </div>
+  </div>
+  <div class="col">
+    <div class="lang">
+      <span class="lang__text">{{ AM }}</span><br>
+      <mat-slider
+        class="lang__slider slide"
+        [disabled]="!editable"
+        [(ngModel)]="dataAM"
+        (input)="onInputChange($event)"
+        step="1"
+        min="0"
+        max="100"
+      ></mat-slider>
+      {{dataAM}}
+    </div>
+  </div>
+  <div class="w-100"></div>
+  <div class="col">
+    <div class="lang">
+      <span class="lang__text">{{ DEV }}</span><br>
+      <mat-slider
+        class="lang__slider slide"
+        [disabled]="!editable"
+        [(ngModel)]="dataDEV"
+        (input)="onInputChange($event)"
+        step="1"
+        min="0"
+        max="100"
+      ></mat-slider>
+      {{dataDEV}}
+    </div>
+  </div>
+  <div class="col">
+    <div class="lang">
+      <span class="lang__text">{{ AANDC }}</span><br>
+      <mat-slider
+        class="lang__slider slide"
+        [disabled]="!editable"
+        [(ngModel)]="dataAANDC"
+        (input)="onInputChange($event)"
+        step="1"
+        min="0"
+        max="100"
+      ></mat-slider>
+      {{dataAANDC}}
+    </div>
+  </div>
+  <div class="w-100"></div>
+  <div class="col">
+    <div class="lang">
+      <span class="lang__text">{{ PM }}</span><br>
+      <mat-slider
+        class="lang__slider slide"
+        [disabled]="!editable"
+        [(ngModel)]="dataPM"
+        (input)="onInputChange($event)"
+        step="1"
+        min="0"
+        max="100"
+      ></mat-slider>
+      {{dataPM}}
+    </div>
+  </div>
+  <div class="col">
+    <div class="lang">
+      <span class="lang__text">{{ TAQ }}</span><br>
+      <mat-slider
+        class="lang__slider slide"
+        [disabled]="!editable"
+        [(ngModel)]="dataTAQ"
+        (change)="onInputChange($event)"
+        step="1"
+        min="0"
+        max="100"
+      ></mat-slider>
+      {{dataTAQ}}
+    </div>
+  </div>
+  <div class="w-100"></div>
+  <div class="col">
+    <div class="lang">
+      <span class="lang__text">{{ WAIT }}</span><br>
+      <mat-slider
+        class="lang__slider slide"
+        [disabled]="!editable"
+        [(ngModel)]="dataWAIT"
+        (input)="onInputChange($event)"
+        step="1"
+        min="0"
+        max="100"
+      ></mat-slider>
+      {{dataWAIT}}
+    </div>
+  </div>
+  <div class="col">
+    <button mat-button (click)="onRefresh()">
+      Refresh
+    </button>
+  </div>
+</div>

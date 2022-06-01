@@ -1,0 +1,63 @@
+.page-heading {
+    font-size: 3.5rem;
+    font-family: "! Jamiroquai !", sans-serif;
+    padding-top: 2rem;
+  }
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  .status-text {
+    font-size: .8rem;
+  }
+  .cv__container{
+    width: 100%;
+    padding: 20px;
+    
+  }
+  .container__title{
+    font-size: 20px;
+    width: 100%;
+
+  }
+  .contflu{
+    margin: 0;
+    height: 75vh;
+    background-color: #F1F5F9;
+  }
+  .Cv__cont{
+    cursor: pointer;
+    color: #8592A4;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 20px;
+    border-bottom:1px solid #e2e8f0;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1) !important;
+  }
+  .Cv__delete{
+    float: right;
+    margin: 15px;
+
+  }
+  .Cv__delete:hover{
+    color:#697483;
+   
+
+  }
+  .Cv__icon{
+    margin-left:-10px;
+    margin-top:10px;
+    font-size:90px;
+  }
+
+  .folder__title{
+    color:black;
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .folder__desc{
+    margin-top:-5px;
+  }

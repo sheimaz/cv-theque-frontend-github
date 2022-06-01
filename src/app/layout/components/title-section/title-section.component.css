@@ -1,0 +1,29 @@
+.head__section{
+    height: 130px;
+    border-bottom:1px solid #e2e8f0;
+}
+.left__section{
+    padding:35px 35px;
+    float: left;
+}
+.left__section > h1{
+    font-weight: 500;
+    font-size:30px;
+}
+.left__section > p{
+    margin-top: -10px;
+    color: rgba(100,116,139);
+    font-weight: 500;
+}
+.right__section{
+    float: right;
+    padding:50px 70px;
+}
+.right__section > button{
+    width: 110%;
+    border-radius:25px;
+    background-color:#562AD5;
+}
+.text_btn{
+    margin-left: 5px;
+}

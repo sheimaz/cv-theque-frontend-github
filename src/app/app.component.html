@@ -1,0 +1,62 @@
+
+
+
+
+ <!-- <mat-sidenav-container  [hasBackdrop]="false">
+ 
+  <mat-sidenav-content >  -->
+    <div class="container-fluid" style="padding: 0;">
+      <div id="mySidebar" class="sidebar" (mouseover)="sidebarHover()" (mouseout)="sidebarHover()"  *ngIf="notLog">
+        <img  src="assets/proxym_logo.png" alt="proxym_logo"class="logo" id="logo"/>
+        <img src="assets/cv_logo_icon.png" alt="proxym_logo" class="logo-mini" id="logo-mini"/>
+        <app-side-bars [mini]="showMenu"></app-side-bars>
+    </div>
+      <div id="main" [ngStyle]="{'margin-left': notLog? '85px': '0'}" >
+        <app-header (onClickNav)="sidebarHandler()" *ngIf="notLog" ></app-header>
+        <router-outlet></router-outlet>
+      </div>
+      
+     
+     <!-- <mat-toolbar color="primary" *ngIf="notLog">
+      <button
+        mat-icon-button
+        *ngIf="sidenav.mode === 'over'"
+        (click)="sidenav.toggle()"
+      >
+        <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+        <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+      </button>
+      <div class="container d-flex ">
+        <span routerLink="/" style="cursor:pointer;">CV-Thèque</span>
+        <span class="spacer"></span>
+        <div class="d-flex justify-content-around icons" style="width: 100px;" *ngIf="showMenu">
+          <div class="d-flex align-items-center mr-2 px-2">
+            <span routerLink="/login">Login</span>
+            <mat-icon routerLink="/login">login</mat-icon>
+          </div>
+             |
+          <div class="d-flex align-items-center ml-2 px-2">
+            <span routerLink="/register">Register</span>
+            <mat-icon routerLink="/register">how_to_reg</mat-icon>
+          </div>
+        </div>
+    
+        <div class="d-flex justify-content-around icons align-items-center" style="width: 100px;" *ngIf="!showMenu">
+          <div class="px-2">
+            <h3>Welcome, {{username | titlecase}}</h3>
+          </div>
+          <mat-icon (click)="logout()">logout</mat-icon>
+        </div>
+      </div>
+    </mat-toolbar> -->
+   
+    </div>
+    
+    
+   
+  <!-- </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+
+
+

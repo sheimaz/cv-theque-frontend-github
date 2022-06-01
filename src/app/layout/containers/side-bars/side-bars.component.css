@@ -1,0 +1,83 @@
+
+.list-container {
+  margin-top: 25px;
+}
+a {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #8592A4;
+  font-weight: 400;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  display: block;
+}
+.sidebar-btn-active {
+  background-color: #f0f1f3;
+  border-radius: 7px;
+  margin-right: 15px;
+  margin-left: 15px;
+  color: #562AD5;
+}
+.material-icons svg path {
+}
+
+a:hover {
+  background-color: #f0f1f3;
+  border-radius: 7px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #562AD5;
+  cursor: pointer;
+  transition: margin-left 0.5s;
+}
+
+.material-icons,
+.icon-text {
+  vertical-align: middle;
+  
+}
+
+.icon-text:hover{
+  color: #562AD5;
+}
+
+.material-icons {
+  font-size: 30px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  margin-right: 30px;
+}
+
+
+main .sidebar {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  padding: 16px;
+  margin-left: 85px;
+  transition: margin-left 0.5s;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+.main-container {
+  margin-right: 9vw;
+  margin-left: 5vw;
+  margin-top: 50px;
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 95%;
+  }
+}

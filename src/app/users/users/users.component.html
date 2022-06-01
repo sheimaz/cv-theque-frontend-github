@@ -1,0 +1,57 @@
+<app-title-section
+  [title]="headerTitle"
+  [descp]="filesNumber"
+  [btnText]="btnText"
+  (onClickBtn)="openDialog()"
+></app-title-section>
+
+<div class="container-fluid contflu">
+  <div class="container__style">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <table
+                class="table table-hover"
+                margin-left:
+                auto
+                margin-right:
+                auto
+              >
+                <thead class="bg-light">
+                  <tr>
+                    <th>Username</th>
+                    <th>JOB</th>
+                    <th>EMAIL</th>
+                    <th>Role</th>
+                    <th>DEPARTEMENT</th>
+                    <th>Edit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="users" *ngFor="let user of users">
+                    <td class="username">
+                      {{ user.username }}<a href="#"></a>
+                    </td>
+                    <td class="job">{{ user.job }}</td>
+                    <td class="email">{{ user.email }}</td>
+                    <td class="role">{{ user.role }}</td>
+                    <td class="departement">
+                      {{ user.departement }}<a href="#"></a>
+                    </td>
+                    <td>
+                      <a href="#"><i class="fa fa-pencil-square-o"></i></a>
+                      <a (click)="delete(user.id)"
+                        ><i class="fa fa-trash"></i
+                      ></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.container__leftside{
+	margin-left:85px;
+}
+.sidebar {
+	height: 100%;
+	width: 85px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: white;
+	transition: 0.5s;
+	overflow-x: hidden;
+	border-right: 1px solid #e2e8f0;
+	white-space: nowrap;
+  }
+  
+  .logo {
+	font-family: "Poppins", sans-serif;
+	color: white;
+	padding-top: 30px;
+	padding-bottom: 60px;
+	width: 225px;
+	margin-left: 12px;
+	text-align: center;
+	display: none;
+	transition: opacity 2s ease-in-out;
+  }
+  .logo-mini {
+	font-family: "Poppins", sans-serif;
+	color: white;
+	width: 57px;
+	margin-left:15px;
+	padding-top: 30px;
+	padding-bottom: 60px;
+	text-align: center;
+	font-weight: 700;
+  }
+.spacer {
+    flex: 1 1 auto;
+  }
+
+mat-sidenav-container{
+height: 100% !important;
+  }
+  
+  .icons mat-icon, .icons div {
+    cursor: pointer;
+  }
+mat-toolbar {
+	 background: #004a9f;
+	 color: white;
+}
+
+ mat-sidenav {
+	 width: 250px;
+	 border-right: none;
+	 background: #673ab7;
+	 color: white;
+	 padding: 10px;
+	 text-align: center;
+}
+ .content {
+	 height: calc(100vh - 130px);
+	 border-radius: 10px;
+	 margin: 16px;
+	 margin-left: 32px;
+	 padding: 16px;
+	 overflow: auto;
+}
+ mat-sidenav-container {
+	 height: 100vh;
+}
+ .menu-button {
+	 width: 100%;
+	 display: flex;
+	 align-items: center;
+	 justify-content: flex-start;
+	 font-size: 1rem;
+}
+ .menu-button mat-icon {
+	 margin-right: 8px;
+}
+ .avatar {
+	 margin-top: 16px;
+	 width: 100px;
+	 height: 100px;
+	 border-radius: 50%;
+}
+ .name {
+	 margin-top: 8px;
+	 font-weight: normal;
+}
+ .designation {
+	 margin-top: 2px;
+	 font-size: 0.7rem;
+	 color: lightgrey;
+}
