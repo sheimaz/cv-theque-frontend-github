@@ -1,5 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { Component, OnInit } from '@angular/core';
+
 
 
 @Component({
@@ -13,17 +13,17 @@ export class CvComponent implements OnInit {
 
 
 
-  constructor(public dialogRef: MatDialogRef<CvComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
   onCancel() {
-    this.dialogRef.close();
+
   }
 
   create() {
-    this.dialogRef.close({title: this.title, description: this.description});
+   console.log({title: this.title, description: this.description});
+  
   }
 
 }

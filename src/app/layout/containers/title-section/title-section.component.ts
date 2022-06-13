@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class TitleSectionComponent implements OnInit {
   @Output() onClickBtn: EventEmitter<any> = new EventEmitter();
+  @Input() pushStyle: boolean = false;
   @Input() title: string = 'File Manager';
   @Input() btnText: string = 'Upload file';
   @Input() descp: string = 7 + " Cvs";

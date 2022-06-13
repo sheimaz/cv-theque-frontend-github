@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {ApiService} from '../../services/api.service';
-import {logger} from 'codelyzer/util/logger';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +11,7 @@ export class RegisterComponent implements OnInit {
   name_text: string = ""
 
 
-  constructor(private apiService: ApiService) {
+  constructor(private userService: UserService) {
   }
 
   ngOnInit(): void {
@@ -24,7 +23,7 @@ export class RegisterComponent implements OnInit {
     }
 
     const {username, password, job, role, departement} = registerForm.value;
-    this.apiService.register(username, password, job, role, departement).subscribe(res => {
+    this.userService.register(username, password, job, role, departement).subscribe(res => {
       registerForm.reset();
     });
 

@@ -21,16 +21,7 @@ export class ApiService {
 
 
 
-  /* Getting All users */
-  getAllusers(): Observable<any> {
-    
-    return this.http.get(`${this.API_URL}/users`,{
-      headers: {
-        Authorization: 'Bearer '+this.token
-      }
-    }
-    );
-  }
+
 
   /*verifyToken(token: string) {
     return this.http.post(`${this.API_URL}/auth/verifyToken`, {token});
@@ -38,18 +29,6 @@ export class ApiService {
 
   
 
-  register(username: string, password: string, job: string, role:string, departement: string) {
-    
-    return this.http.post(`${this.API_URL}/auth/register`, {username, password, job, role, departement}).pipe(
-      // @ts-ignore
-      catchError((err: HttpErrorResponse) => {
-        this.toast.error(err.error.message, '', {
-          timeOut: 1000
-        });
-      })
-    );
-    
-  }
 
 
   
@@ -71,20 +50,7 @@ export class ApiService {
     );
   }
 */
-  deleteuser(userId: number) {
-   
-    return this.http.delete(`${this.API_URL}/users/${userId}`, {
-      headers: {
-        Authorization: `Bearer ${this.token}`
-      }}).pipe(
-        tap(res => {
-          // @ts-ignore
-          if (res.success) {
-            this.toast.success('user deleted successfully');
-          }
-        })
-      );
-    }
+
 
  
 

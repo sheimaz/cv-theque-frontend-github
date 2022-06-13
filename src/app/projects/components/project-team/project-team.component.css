@@ -1,0 +1,70 @@
+
+  .Cv__cont{
+    cursor: pointer;
+    color: #8592A4;
+    margin: 20px;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 20px;
+    border-bottom:1px solid #e2e8f0;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1) !important;
+  }
+  .Cv__delete{
+    float: right;
+    margin: 15px;
+    color: #364bb6;
+
+  }
+
+  .Cv__icon{
+    margin-left:-40px;
+    margin-top:10px;
+    font-size:120px;
+  }
+
+  .folder__title{
+    color:black;
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .folder__desc{
+    margin-top:-5px;
+  }
+   a{
+    text-decoration: none;
+    color:rgb(57, 57, 57);
+  }
+  .btn-section{
+      margin-top:30px;
+      width: 100%;
+      border-top: 1px solid #e2e8f0; 
+      padding: 20px 50px;
+  }
+  .left-btn{
+      float:left;
+  }
+  .right-btn{
+      float:right;
+  }
+  .link-text{
+      margin-top:-5px;
+  }
+  .btn-icon{
+    font-size:27px;
+  }
+  ::ng-deep .mat-form-field-outline-start {
+    border-radius: 5px 0 0 5px !important;
+    min-width: 28px !important;
+    margin: 0 !important;
+
+  }
+  ::ng-deep .mat-form-field-wrapper{
+    margin: 0 !important;
+  }
+  ::ng-deep .mat-form-field-outline-end {
+    border-radius: 0 5px 5px 0 !important;
+    
+
+  }

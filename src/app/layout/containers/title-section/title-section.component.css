@@ -1,6 +1,8 @@
+
 .head__section{
     height: 130px;
     border-bottom:1px solid #e2e8f0;
+    transition: margin-left 0.5s;
 }
 .left__section{
     padding:35px 35px;

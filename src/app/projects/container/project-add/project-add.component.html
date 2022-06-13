@@ -1,0 +1,28 @@
+
+  <mat-tab-group class="tabs-container" [selectedIndex]="selectedTab">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">info</mat-icon>
+        Info
+      </ng-template>
+      <app-project-form (changeTab)="onchangeTab()"></app-project-form>
+    </mat-tab>
+  
+    <mat-tab [disabled]="selectedTab === 0">
+      <ng-template mat-tab-label  >
+        <mat-icon class="example-tab-icon">group_add</mat-icon>
+        Team
+      </ng-template>
+      <div class="container-fluid">
+        <div class="d-flex flex-wrap cv__container">
+ 
+       <app-project-team></app-project-team>
+       <app-project-team></app-project-team>
+       <app-project-team></app-project-team>
+       <app-project-team></app-project-team>
+        </div>
+      </div>
+    </mat-tab>
+  
+    
+  </mat-tab-group>

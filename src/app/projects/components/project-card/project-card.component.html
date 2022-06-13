@@ -1,0 +1,48 @@
+<div
+class="Cv__cont"
+[ngStyle]="{ height: showMoreText ? '100%' : '370px' }"
+>
+<div class="top__icons">
+  <span class="Prj_type">web</span>
+  <mat-icon class="Prj__check" *ngIf="status === 'done'">verified</mat-icon>
+</div>
+<br />
+<div class="inf_cont">
+  <p class="folder__name">
+    {{ title }}
+  </p>
+  <p class="folder__desc" [ngClass]="{ limit_text: !showMoreText }">
+    {{ description }}
+  </p>
+  <button
+    class="btn-showmore"
+    mat-button
+    color="primary"
+    (click)="onShowMore()"
+  >
+    {{showMore}}
+  </button>
+  <br />
+  <div class="saprirate_div"></div>
+
+  <div class="folder__date">
+    <mat-icon class="Prj__date">calendar_month</mat-icon>
+    <span class="date__text"> {{ date }}</span>
+  </div>
+  <div class="folder__date">
+    <mat-icon class="Prj__date">groups</mat-icon>
+    <span class="date__text"> {{ team }} members</span>
+  </div>
+</div>
+<div class="btn__section">
+  <mat-icon class="Prj__delete" (click)="onDelete()">delete</mat-icon>
+  <button
+    class="btn-showmore moreinfo"
+    mat-flat-button
+    color="primary"
+    (click)="onOpenDialog()"
+  >
+    more info
+  </button>
+</div>
+</div>

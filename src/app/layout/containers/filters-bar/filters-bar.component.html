@@ -1,0 +1,20 @@
+<div class="search-container" [ngStyle]="{'margin-right': pushStyle? '350px': '0'}">
+        <div class="search-box" (mouseover)="pushFilter=true" (mouseout)="pushFilter=false">
+            <input class="search-input" type="text" (keyup)="onSearchChange($event)"
+            [(ngModel)]="inputFill" 
+            >
+            <!-- [ngStyle]="{'width': inputFill=='' ? '0px' : '200px'}" -->
+            <a href="#" class="search-btn">
+              <mat-icon class="fa-search">search</mat-icon>
+            </a>     
+    </div>
+    <div class="filters-section" [ngStyle]="{'margin-left': pushFilter ? '300px' : '100px'}">
+      <button class="btn-filter" mat-stroked-button color="primary">Filter </button>
+      <app-departement-filter class="btn-filter"></app-departement-filter>
+      
+      <app-tech-filter  *ngIf="!UserManager"></app-tech-filter>
+      <app-role-filter class="btn-filter" *ngIf="UserManager"></app-role-filter>
+      <app-psy-filter  *ngIf="!UserManager"></app-psy-filter>
+      
+    </div>
+</div>

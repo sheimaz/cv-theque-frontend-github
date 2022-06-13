@@ -1,11 +1,8 @@
 import { CvService } from './../cv/services/cv.service';
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
-
-
 import {CvComponent} from '../cv/cv-list/cv.component';
 import {ApiService} from '../services/api.service';
-;
+
 
 @Component({
   selector: 'app-home',
@@ -15,14 +12,14 @@ import {ApiService} from '../services/api.service';
 export class HomeComponent implements OnInit {
   headerTitle: string = "CV Manager";
   filesNumber: string = 0 + " files";
+  showPanel: boolean = false;
   btnText: string = "Upload CV"
   cvs: any = [];//TO SAVE ALL DATA
   searchValue = '';
-  filteredcvs: any[] = [];//TO SHOW SAVED DATA 
+  filteredcvs: any[] = [{title:'test1',description:'test descp'},{title:'test1',description:'test descp'},{title:'test1',description:'test descp'}];//TO SHOW SAVED DATA 
   
 
-  constructor(private apiService: ApiService,private cvService: CvService,
-              private dialog: MatDialog) {
+  constructor(private cvService: CvService) {
   }
 
   ngOnInit(): void {
@@ -35,8 +32,8 @@ export class HomeComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-  onSearchChange(event: any) {
-    const searchValueInput = event.target.value;
+  onSearchChange(searchValueInput: any) {
+    console.log(searchValueInput);
     this.filteredcvs = this.cvs;
     if (searchValueInput) {
       this.filteredcvs = this.filteredcvs.filter(
@@ -52,21 +49,16 @@ export class HomeComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   openDialog() {
-    const dialogRef = this.dialog.open(CvComponent, {
-      width: '500px',
-      hasBackdrop: true,
-      role: 'dialog',
-      height: '500px'
-    });
+    this.showPanel = !this.showPanel;
 
-    dialogRef.afterClosed().subscribe(data => {
-      console.log(data);
-      this.cvService.createcv(data.title, data.description).subscribe((result: any) => {
-        console.log(result);
-        this.cvs.push(result);
-        this.filteredcvs = this.cvs;
-      })
-    });
+    // dialogRef.afterClosed().subscribe(data => {
+    //   console.log(data);
+    //   this.cvService.createcv(data.title, data.description).subscribe((result: any) => {
+    //     console.log(result);
+    //     this.cvs.push(result);
+    //     this.filteredcvs = this.cvs;
+    //   })
+    // });
   }
 
   // tslint:disable-next-line:typedef

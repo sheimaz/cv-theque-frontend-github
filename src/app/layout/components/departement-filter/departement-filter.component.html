@@ -1,0 +1,15 @@
+
+  <mat-form-field appearance="outline" color="primary">
+    <mat-label>Departement</mat-label>
+    <mat-select [formControl]="departement" multiple>
+      <mat-select-trigger>
+        {{departement.value ? departement.value[0] : ''}}
+        <span *ngIf="departement.value?.length > 1" class="example-additional-selection">
+          (+{{departement.value.length - 1}} {{departement.value?.length === 2 ? 'other' : 'others'}})
+        </span>
+      </mat-select-trigger>
+      <mat-option *ngFor="let departement of departementList" [value]="departement">{{departement}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+     

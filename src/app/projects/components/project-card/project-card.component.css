@@ -1,0 +1,88 @@
+.Cv__cont{
+    cursor: pointer;
+    color: #8592A4;
+    margin: 20px;
+    width: 280px;
+    height: 370px;
+    background-color: #fff;
+    border-radius: 20px;
+    border-bottom:1px solid #e2e8f0;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1) !important;
+  }
+  .Prj_type{
+    float: left;
+    margin: 20px;
+    width: 50px;
+    height: 20px;
+    color:rgb(30, 64, 175);
+    background-color: rgb(59 130 246 / .5);
+    border-radius: 15px;
+    
+  }
+  .top__icons{
+    text-align: center;
+  }
+  .Prj__check{
+    float: right;
+    margin: 20px;
+    color :rgb(22 163 74);
+
+  }
+
+  .Cv__delete:hover{
+    color:#697483;
+   
+
+  }
+  .limit_text{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical; 
+  }
+  .Cv__icon{
+    margin-left:-10px;
+    margin-top:10px;
+    font-size:90px;
+  }
+  .inf_cont{
+    margin: 20px;
+    margin-top: 50px;
+  }
+  .saprirate_div{
+    width: 70px;
+    border-top: 1px solid #e2e8f0;
+    margin-bottom: 30px;
+  }
+  .btn-showmore{
+    float: right;
+  }
+  .folder__name{
+    color:black;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .folder__desc{
+    margin-top:-5px;
+    overflow: hidden;
+  }
+  .folder__date{
+    font-size:20px;
+    margin-bottom:5px;
+  }
+  .Prj__date{
+
+   
+  }
+
+.date__text{
+  margin-top:-50px !important;
+  font-size:14px;
+}
+.btn__section{
+  border-top: 1px solid #e2e8f0; 
+  padding: 15px 20px;
+}
+.moreinfo{
+  border-radius:25px;
+  background-color:#562AD5;
+}

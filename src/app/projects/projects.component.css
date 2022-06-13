@@ -1,0 +1,32 @@
+.page-heading {
+    font-size: 3.5rem;
+    font-family: "! Jamiroquai !", sans-serif;
+    padding-top: 2rem;
+  }
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  .status-text {
+    font-size: .8rem;
+  }
+  .cv__container{
+    width: 100%;
+    padding: 20px;
+    
+  }
+  .container__title{
+    font-size: 20px;
+    width: 100%;
+
+  }
+  .contflu{
+    margin: 0;
+    height: 75vh;
+    background-color: #F1F5F9;
+  }
+  .contfluS{
+    margin: 0;
+    height: 58px;
+    background-color: #F1F5F9;
+  }

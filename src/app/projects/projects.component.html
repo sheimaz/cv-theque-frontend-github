@@ -1,1 +1,35 @@
-<p>projects works!</p>
+<app-project-sidebar [pushStyle]="showPanel"></app-project-sidebar>
+<app-title-section
+  [title]="headerTitle"
+  [descp]="filesNumber"
+  [btnText]="btnText"
+  [pushStyle]="showPanel"
+  (onClickBtn)="openDialog()"
+></app-title-section>
+<div *ngIf="!addFormShow">
+ <app-filters-bar
+  [pushStyle]="showPanel"
+  (searchField)="onSearchChange($event)"
+></app-filters-bar>
+<div class="container-fluid contflu">
+  <div class="d-flex flex-wrap cv__container">
+    <h3 class="container__title">Projects</h3>
+    <br />
+    <div *ngFor="let t of filteredProjects; let i = index">
+      <app-project-card
+        [title]="t.title"
+        [description]="t.description"
+        [date]="t.date"
+        [team]="t.team"
+        [status]="t.status"
+        (openDialog)="openDialog()"
+        (delete)="delete(t.id)"
+      ></app-project-card>
+    </div>
+  </div>
+</div> 
+</div>
+
+<div class="contfluS" *ngIf="addFormShow">
+<app-project-add></app-project-add>
+</div>

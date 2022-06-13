@@ -1,0 +1,60 @@
+<button class="btn-filter" [matMenuTriggerFor]="menu"  mat-stroked-button color="primary">Psycho Skills</button>
+<mat-menu #menu="matMenu" class="menu-style" >
+
+    <button mat-menu-item [matMenuTriggerFor]="AACmenu">Analysis and conception : {{AACvalue}}</button>
+    <button mat-menu-item [matMenuTriggerFor]="DEVmenu">Development : {{DEVvalue}}</button>
+    <button mat-menu-item [matMenuTriggerFor]="PMmenu">Project Management : {{PMvalue}}</button>
+    <button mat-menu-item [matMenuTriggerFor]="WITmenu">Watch and innovate  : {{WITvalue}}</button>
+    <button mat-menu-item [matMenuTriggerFor]="AMmenu">Agile method : {{AMvalue}}</button>
+    <button mat-menu-item [matMenuTriggerFor]="ACmenu">Animation & communication : {{ACvalue}}</button>
+    <button mat-menu-item [matMenuTriggerFor]="TQmenu">Test & Quality : {{TQvalue}}</button>
+  </mat-menu>
+  <mat-menu #AACmenu="matMenu">
+    <mat-slider class="rating__slider slide"
+      [(ngModel)]="AACvalue" step="1" min="0" max="100"
+      (click) = "$event.stopPropagation()"
+    ></mat-slider>
+  </mat-menu>
+  <mat-menu #DEVmenu="matMenu">
+    <mat-slider class="rating__slider slide"
+      [(ngModel)]="DEVvalue" step="1" min="0" max="100"
+      (click) = "$event.stopPropagation()"
+    ></mat-slider>
+  </mat-menu>
+  <mat-menu #PMmenu="matMenu">
+    <mat-slider class="rating__slider slide"
+      [(ngModel)]="PMvalue" step="1" min="0" max="100"
+      (click) = "$event.stopPropagation()"
+    ></mat-slider>
+  </mat-menu>
+  <mat-menu #WITmenu="matMenu">
+    <mat-slider class="rating__slider slide"
+      [(ngModel)]="WITvalue" step="1" min="0" max="100"
+      (click) = "$event.stopPropagation()"
+    ></mat-slider>
+  </mat-menu>
+  <mat-menu #AMmenu="matMenu">
+    <mat-slider class="rating__slider slide"
+      [(ngModel)]="AMvalue" step="1" min="0" max="100"
+      (click) = "$event.stopPropagation()"
+    ></mat-slider>
+  </mat-menu>
+  <mat-menu #ACmenu="matMenu">
+    <mat-slider class="rating__slider slide"
+      [(ngModel)]="ACvalue" step="1" min="0" max="100"
+      (click) = "$event.stopPropagation()"
+    ></mat-slider>
+  </mat-menu>
+  <mat-menu #TQmenu="matMenu">
+    <mat-slider class="rating__slider slide"
+      [(ngModel)]="TQvalue" step="1" min="0" max="100"
+      (click) = "$event.stopPropagation()"
+    ></mat-slider>
+  </mat-menu>
+
+
+
+
+
+
+

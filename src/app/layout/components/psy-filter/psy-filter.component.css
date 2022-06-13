@@ -1,0 +1,32 @@
+.btn-filter{
+    border-radius: 25px;
+    margin: 0 10px;
+    height:52px;
+    width: 120px;
+
+  }
+
+.rating{
+    margin-top:10px;
+    display: inline;
+    padding: 10px;
+  }
+  
+  
+  :host ::ng-deep .slide .mat-slider-thumb {
+      background-color: #562AD5;
+    }
+  :host ::ng-deep .slide .mat-slider-thumb-label {
+      background-color: #562AD5;
+    }
+    
+  :host ::ng-deep .slide .mat-slider-track-fill {
+      background-color: #562AD5;
+    }
+  
+    .menu-style{
+      padding: 10px;
+    }
+    .rating__slider{
+      margin: 0 10px;
+    }

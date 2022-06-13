@@ -1,0 +1,56 @@
+.side-container{
+    width: 0;
+    height: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 70px;
+	right: 0;
+	background-color: white;
+	transition: 0.5s;
+	overflow-x: hidden;
+	border-left: 1px solid #e2e8f0;
+    border-top: 1px solid #e2e8f0;
+	white-space: nowrap;
+    transition: width 0.5s;
+}
+.close-btn{
+	float: right;
+	margin: 30px;
+	cursor: pointer;
+}
+.content-container{
+	margin:100px 50px;
+}
+.icon-container{
+	position: relative;
+	height:200px;
+	width: 100%;
+	background-color: rgb(248 250 252);
+	border: 1px solid #cbd5e1;
+	border-radius: 15px;
+	
+}
+.file-icon{
+	font-size:80px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%, -50%);
+	color: #8592A4;
+	
+
+}
+.form-container{
+	margin-top:30px;
+}
+.btn-style{
+    width: 60%;
+    border-radius:25px;
+	margin-left: 20px;
+    
+	
+}
+.btn-style-active{
+	background-color:#562AD5;
+	color: white;
+}

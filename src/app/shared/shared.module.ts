@@ -20,8 +20,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTabsModule} from '@angular/material/tabs';
 import { AppRoutingModule } from '../app-routing.module';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 const MatModules: any[] = [
@@ -40,6 +44,11 @@ const MatModules: any[] = [
   MatSliderModule,
   MatGridListModule,
   MatStepperModule,
+  MatMenuModule,
+  MatTabsModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  FontAwesomeModule
 ]
 
 const sharedModule : any [] = [

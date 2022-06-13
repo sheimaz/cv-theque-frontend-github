@@ -1,0 +1,13 @@
+
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>Role</mat-label>
+        <mat-select [formControl]="role" multiple>
+          <mat-select-trigger>
+            {{role.value ? role.value[0] : ''}}
+            <span *ngIf="role.value?.length > 1" class="example-additional-selection">
+              (+{{role.value.length - 1}} {{role.value?.length === 2 ? 'other' : 'others'}})
+            </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let roleUser of roleList" [value]="roleUser">{{roleUser}}</mat-option>
+        </mat-select>
+      </mat-form-field>
