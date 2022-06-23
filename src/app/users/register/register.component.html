@@ -8,33 +8,51 @@
             <div class="card-body">
               <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
                 <div class="form-group row">
-                  <label for="email_address" class="col-md-4 col-form-label text-md-right">Username</label>
+                  <label for="email_address" class="col-md-4 col-form-label text-md-right">Email</label>
                   <div class="col-md-6">
-                    <input type="text"  id="email_address" class="form-control" name="username" required autofocus ngModel>
+                    <input type="text"  id="email_address" [(ngModel)]="user.email" class="form-control" name="email" required autofocus ngModel>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="job"  class="col-md-4 col-form-label text-md-right">Username</label>
+                  <div class="col-md-6">
+                    <input type="text" id="username" [(ngModel)]="user.username" class="form-control" name="username" required autofocus ngModel>
                   </div>
                 </div>
                 <div class="form-group row">
                   <label for="job"  class="col-md-4 col-form-label text-md-right">Job</label>
                   <div class="col-md-6">
-                    <input type="text" id="job" [(ngModel)]="name_text" class="form-control" name="job" required autofocus ngModel>
+                    <input type="text" id="job" [(ngModel)]="user.job" class="form-control" name="job" required autofocus ngModel>
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="role" class="col-md-4 col-form-label text-md-right">Role</label>
+                  <label for="role" class=" height-fix col-md-4 col-form-label text-md-right">Role</label>
                   <div class="col-md-6">
-                    <input type="text" id="role" class="form-control" name="role" required autofocus ngModel>
+                    <mat-form-field  class="select-css" appearance="outline" color="primary">
+                      <mat-label  >Role </mat-label>
+                      <mat-select [(ngModel)]="role" name="role" (selectionChange)="onRoleChange($event)">
+                        <mat-option  *ngFor="let job of roleList" [value]="job">{{ job }}</mat-option>
+                      </mat-select>
+                    </mat-form-field>
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="departement" class="col-md-4 col-form-label text-md-right">Departement</label>
+                  <label for="role" class=" height-fix col-md-4 col-form-label text-md-right">Departement</label>
                   <div class="col-md-6">
-                    <input type="text" id="departement" class="form-control" name="departement" required autofocus ngModel>
+                    <mat-form-field  class="select-css" appearance="outline" color="primary">
+                      <mat-label  >departement </mat-label>
+                      <mat-select [(ngModel)]="departement" name="role" (selectionChange)="onDepChange($event)">
+                        <mat-option  *ngFor="let dep of roleDep" [value]="dep">{{ dep }}</mat-option>
+                      </mat-select>
+                    </mat-form-field>
                   </div>
                 </div>
+                
+                
                 <div class="form-group row">
-                  <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                  <label for="password" class="col-md-4 col-form-label text-md-right" *ngIf="!isUpdate">Password</label>
                   <div class="col-md-6">
-                    <input type="password" id="password" class="form-control" name="password" required ngModel>
+                    <input type="password" id="password" class="form-control" *ngIf="!isUpdate" name="password" required ngModel>
                   </div>
                 </div>
 
@@ -42,7 +60,8 @@
                   <button type="submit"
                           [disabled]="registerForm.invalid"
                           class="btn btn-primary d-block flex-grow-1 mb-3">
-                    Add User
+                          {{!isUpdate? ' Add User' : 'Update User'}}
+                   
                   </button>
                 </div>
               </form>

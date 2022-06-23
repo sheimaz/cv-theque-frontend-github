@@ -14,12 +14,14 @@
         Team
       </ng-template>
       <div class="container-fluid">
-        <div class="d-flex flex-wrap cv__container">
+        <div class="d-flex flex-wrap cv__container" >
+          <div *ngFor="let t of filterdUsers; let i = index"
+          >
+          <app-project-team [Name]="t.username" [Job]="t.job" [Email]="t.email"> </app-project-team>
+        </div>
  
-       <app-project-team></app-project-team>
-       <app-project-team></app-project-team>
-       <app-project-team></app-project-team>
-       <app-project-team></app-project-team>
+       
+       
         </div>
       </div>
     </mat-tab>

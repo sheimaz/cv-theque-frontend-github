@@ -2,6 +2,7 @@ import { CvService } from './../cv/services/cv.service';
 import { Component, OnInit } from '@angular/core';
 import {CvComponent} from '../cv/cv-list/cv.component';
 import {ApiService} from '../services/api.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,18 +20,21 @@ export class HomeComponent implements OnInit {
   filteredcvs: any[] = [{title:'test1',description:'test descp'},{title:'test1',description:'test descp'},{title:'test1',description:'test descp'}];//TO SHOW SAVED DATA 
   
 
-  constructor(private cvService: CvService) {
+  constructor(private cvService: CvService,private router: Router) {
   }
 
   ngOnInit(): void {
     this.cvService.getAllcvs().subscribe((cvs) => {
+      console.log(cvs)
       this.cvs = cvs;
       this.filteredcvs = this.cvs;
       this.filesNumber = this.cvs.length + " Cvs";
     })
 
   }
-
+  NavigateTo(){
+    this.router.navigateByUrl('/create').then();
+  }
   // tslint:disable-next-line:typedef
   onSearchChange(searchValueInput: any) {
     console.log(searchValueInput);
@@ -45,6 +49,9 @@ export class HomeComponent implements OnInit {
     } else {
       this.filteredcvs = this.cvs;
     }
+  
+  
+
   }
 
   // tslint:disable-next-line:typedef
@@ -72,14 +79,28 @@ export class HomeComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   delete(id: number) {
+    console.log(id)
     if (confirm('Do you want to remove the cv?')) {
       this.cvService.deletecv(id).subscribe(res => {
         // @ts-ignore
         if (res.success) {
-          this.cvs = this.cvs.filter((t: any) => t.id !== id);
-          this.filteredcvs = this.cvs;
+          this.cvService.getAllcvs().subscribe((cvs) => {
+            this.cvs = cvs;
+            this.filteredcvs = this.cvs;
+            this.filesNumber = this.cvs.length + " Cvs";
+          })
         }
       });
     }
   }
+
+
+submitForm(event:any){
+  console.log("first"+ JSON.stringify(event));
+  this.cvService.createcv(event.title, event.description).subscribe((result: any) => {
+    console.log(result);
+    this.cvs.push(result);
+    this.filteredcvs = this.cvs;
+  })}
+
 }

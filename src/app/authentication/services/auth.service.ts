@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AuthService {
   private token: any = '';
+  private role: any = '';
   private jwtToken$ = new BehaviorSubject<string>(this.token);
   private API_URL = 'http://localhost:3000';
 
@@ -27,6 +28,8 @@ export class AuthService {
   
         .subscribe((res: any) => {
           this.token = res.token;
+          this.role = res.role;
+          console.log(res);
   
           if (this.token) {
             this.toast.success('Login successful, redirecting now...', '', {
@@ -35,7 +38,18 @@ export class AuthService {
             }).onHidden.toPromise().then(() => {
               this.jwtToken$.next(this.token);
               localStorage.setItem('act', this.token);
-              this.router.navigateByUrl('/').then();
+              localStorage.setItem('role', this.role);
+              if(!this.role){
+                this.router.navigateByUrl('/login').then();
+              }
+              if( this.role === 'Admin'){
+                this.router.navigateByUrl('/users').then();
+              }else if(this.role === 'ResponsablePole') {
+                this.router.navigateByUrl('/projects').then();
+              }else {
+                this.router.navigateByUrl('/').then();}
+              //console.log(first)
+            
             });
           }
         }, (err: HttpErrorResponse) => {
@@ -52,6 +66,7 @@ export class AuthService {
         timeOut: 500
       }).onHidden.subscribe(() => {
         localStorage.removeItem('act');
+        localStorage.removeItem('role');
         this.router.navigateByUrl('/login').then();
       });
       return '';

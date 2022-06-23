@@ -9,17 +9,19 @@ import { ProjectsComponent } from './projects/projects.component';
 import {RegisterComponent} from './users/register/register.component';
 import { UsersComponent } from './users/users/users.component';
 import { LoginComponent } from './authentication/login/login.component';
+import { AuthGuard } from './authentication/guards/auth.guard';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    //canActivate: [AuthGuard]
+    component: HomeComponent
+  
   },
   {
     path: 'create',
     component: CvBuilderComponent
+    
   },
   
   {
@@ -29,13 +31,18 @@ const routes: Routes = [
   {
   path: 'projects',
     component: ProjectsComponent
+    
   },
   {
     path: 'register',
     component: RegisterComponent
+    
+
   },
   { path: 'users',
-    component: UsersComponent
+    component: UsersComponent,
+    //canActivate: [AuthGuard]
+
 
   },
   {

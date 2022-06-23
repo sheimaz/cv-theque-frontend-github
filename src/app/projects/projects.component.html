@@ -10,6 +10,7 @@
  <app-filters-bar
   [pushStyle]="showPanel"
   (searchField)="onSearchChange($event)"
+  (depField)="onDepChange($event)"
 ></app-filters-bar>
 <div class="container-fluid contflu">
   <div class="d-flex flex-wrap cv__container">
@@ -19,8 +20,8 @@
       <app-project-card
         [title]="t.title"
         [description]="t.description"
-        [date]="t.date"
-        [team]="t.team"
+        [date]="t.dateStart"
+        [team]="t.secteur"
         [status]="t.status"
         (openDialog)="openDialog()"
         (delete)="delete(t.id)"

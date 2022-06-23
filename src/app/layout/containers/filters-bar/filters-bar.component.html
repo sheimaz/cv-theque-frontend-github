@@ -9,12 +9,16 @@
             </a>     
     </div>
     <div class="filters-section" [ngStyle]="{'margin-left': pushFilter ? '300px' : '100px'}">
-      <button class="btn-filter" mat-stroked-button color="primary">Filter </button>
-      <app-departement-filter class="btn-filter"></app-departement-filter>
-      
-      <app-tech-filter  *ngIf="!UserManager"></app-tech-filter>
-      <app-role-filter class="btn-filter" *ngIf="UserManager"></app-role-filter>
-      <app-psy-filter  *ngIf="!UserManager"></app-psy-filter>
+      <!-- <button class="btn-filter" mat-stroked-button color="primary">Filter </button> -->
+      <app-departement-filter class="btn-filter" (depField)="onDepChange($event)" ></app-departement-filter>
+      <app-role-filter class="btn-filter"  (roleField)="onRoleChange($event)" *ngIf="UserManager"></app-role-filter>
+      <!-- <app-job-filter class="btn-filter" (roleField)="onRoleChange($event)"></app-job-filter> -->
+     
+
+
+      <app-tech-filter  *ngIf="CvManager"></app-tech-filter>
+     
+      <app-psy-filter  *ngIf="CvManager"></app-psy-filter>
       
     </div>
 </div>

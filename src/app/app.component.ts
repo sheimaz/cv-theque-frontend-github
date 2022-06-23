@@ -48,11 +48,11 @@ export class AppComponent {
         const decoded: any = jwtDecode(token);
         this.username = decoded.username;
       }
-      if (this.username) {
-        this.showMenu = false;
-      } else {
-        this.showMenu = true;
-      }
+      // if (this.username) {
+      //   this.showMenu = false;
+      // } else {
+      //   this.showMenu = true;
+      // }
     });
     
     
@@ -85,8 +85,12 @@ export class AppComponent {
       this.document.getElementById("logo-mini")!.style.display = "none";
       this.document.getElementById("logo")!.style.display = "block";
       this.document.getElementById("main")!.style.marginLeft = "250px";
+      
     }else{
       this.showMenu= true;
+
+
+
       this.document.getElementById("main")!.style.marginLeft = "85px";
       this.document.getElementById("mySidebar")!.style.width = "85px";
       this.document.getElementById("logo-mini")!.style.display = "block";

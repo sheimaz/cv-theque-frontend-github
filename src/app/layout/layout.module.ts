@@ -10,6 +10,7 @@ import { DepartementFilterComponent } from './components/departement-filter/depa
 import { TechFilterComponent } from './components/tech-filter/tech-filter.component';
 import { UploadSidebarComponent } from './containers/upload-sidebar/upload-sidebar.component';
 import { RoleFilterComponent } from './components/role-filter/role-filter.component';
+import { JobFilterComponent } from './components/job-filter/job-filter.component';
 
 
 
@@ -24,6 +25,7 @@ import { RoleFilterComponent } from './components/role-filter/role-filter.compon
     TechFilterComponent,
     UploadSidebarComponent,
     RoleFilterComponent,
+    JobFilterComponent,
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,4 @@
-<app-upload-sidebar [pushStyle]="showPanel"></app-upload-sidebar>
+<app-upload-sidebar [pushStyle]="showPanel" (submitForm)="submitForm($event)"></app-upload-sidebar>
 <app-title-section
   [title]="headerTitle"
   [descp]="filesNumber"
@@ -6,7 +6,7 @@
   [pushStyle]="showPanel"
   (onClickBtn)="openDialog()"
 ></app-title-section>
-<app-filters-bar [pushStyle]="showPanel" (searchField)="onSearchChange($event)"></app-filters-bar>
+<app-filters-bar [CvManager]="true" [pushStyle]="showPanel" (searchField)="onSearchChange($event)"></app-filters-bar>
 <div class="container-fluid contflu">
   <div class="d-flex flex-wrap cv__container">
     <h3 class="container__title">Cvs</h3>
@@ -14,13 +14,16 @@
     <div class="Cv__cont" *ngFor="let t of filteredcvs; let i = index">
       <mat-icon class="Cv__delete" (click)="delete(t.id)">delete</mat-icon
       ><br />
-       <mat-icon class="Cv__icon" >insert_drive_file</mat-icon>
-      <p class="folder__title">
-        {{ t.title }}
-      </p>
-      <p class="folder__desc">
-        {{ t.description }}
-      </p>
+      <div (click)="NavigateTo()">
+        <mat-icon class="Cv__icon"  >insert_drive_file</mat-icon>
+        <p class="folder__title">
+          {{ t.title }}
+        </p>
+        <p class="folder__desc">
+          {{ t.description }}
+        </p>
+      </div>
+     
     </div>
   </div>
 </div>

@@ -40,6 +40,7 @@ export class ProjectFormComponent implements OnInit {
     return
   }
   submitForm(){
+    console.log(this.range.value.start);
     const project = {
       type:this.type.value,
       title:this.title.value,
@@ -49,7 +50,12 @@ export class ProjectFormComponent implements OnInit {
       dateEnd:this.range.value.end,
       secteur:this.secteur.value
     }
+    console.log("submiting");
     this.projectsService.setProject(project)
+    this.projectsService.createproject(project).subscribe((pjt) => {
+      console.log("in sub");
+      console.log(pjt)
+    })
     this.changeTab.emit();
     
     

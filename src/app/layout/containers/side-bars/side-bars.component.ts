@@ -7,11 +7,28 @@ import { DOCUMENT } from '@angular/common';
   styleUrls: ['./side-bars.component.css']
 })
 export class SideBarsComponent implements OnInit {
+  isAdmin: boolean = false;
+  isRespo: boolean = false;
+  anyRole: boolean = false;
 
   @Input()mini :boolean = true;
   constructor(@Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit(): void {
+    this.isAdmin = false;
+    this.isRespo = false;
+    this.anyRole = false;
+    if (localStorage.getItem("role")){
+      if(localStorage.getItem("role")==='Admin'){
+        this.isAdmin = true;
+      }else  if(localStorage.getItem("role")==='ResponsablePole'){
+        this.isRespo = true;
+      }else{
+        this.anyRole = true;
+      }
+    }
+   
+    
   }
   public sidebarHover(): void {
     if (this.mini) {

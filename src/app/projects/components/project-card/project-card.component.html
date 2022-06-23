@@ -24,15 +24,15 @@ class="Cv__cont"
   </button>
   <br />
   <div class="saprirate_div"></div>
-
+  <div class="folder__date">
+    <mat-icon class="Prj__date">home</mat-icon>
+    <span class="date__text"> {{ team }}</span>
+  </div>
   <div class="folder__date">
     <mat-icon class="Prj__date">calendar_month</mat-icon>
     <span class="date__text"> {{ date }}</span>
   </div>
-  <div class="folder__date">
-    <mat-icon class="Prj__date">groups</mat-icon>
-    <span class="date__text"> {{ team }} members</span>
-  </div>
+ 
 </div>
 <div class="btn__section">
   <mat-icon class="Prj__delete" (click)="onDelete()">delete</mat-icon>

@@ -4,55 +4,60 @@
   [btnText]="btnText"
   (onClickBtn)="openDialog()"
 ></app-title-section>
-<app-filters-bar [pushStyle]="showPanel" [UserManager]="true" (searchField)="onSearchChange($event)"></app-filters-bar>
+<app-filters-bar
+  [pushStyle]="showPanel"
+  [UserManager]="true"
+  (searchField)="onSearchChange($event)"
+  (depField)="onDepChange($event)"
+  (roleField)="onRoleChange($event)"
+></app-filters-bar>
 
 <div class="container-fluid contflu">
   <div class="container__style">
-      <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-12">
-              <table
-                class="table table-hover"
-                margin-left:
-                auto
-                margin-right:
-                auto
-              >
-                <thead class="bg-light">
-                  <tr>
-                    <th>Username</th>
-                    <th>JOB</th>
-                    <th>EMAIL</th>
-                    <th>Role</th>
-                    <th>DEPARTEMENT</th>
-                    <th>Edit</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="users" *ngFor="let user of filterdUsers">
-                    <td class="username">
-                      {{ user.username }}<a href="#"></a>
-                    </td>
-                    <td class="job">{{ user.job }}</td>
-                    <td class="email">{{ user.email }}</td>
-                    <td class="role">{{ user.role }}</td>
-                    <td class="departement">
-                      {{ user.departement }}<a href="#"></a>
-                    </td>
-                    <td>
-                      <a href="#"><i class="fa fa-pencil-square-o"></i></a>
-                      <a (click)="delete(user.id)"
-                        ><i class="fa fa-trash"></i
-                      ></a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <table
+              class="table table-hover"
+              margin-left:
+              auto
+              margin-right:
+              auto
+            >
+              <thead class="bg-light">
+                <tr>
+                  <th>Username</th>
+                  <th>JOB</th>
+                  <th>EMAIL</th>
+                  <th>Role</th>
+                  <th>DEPARTEMENT</th>
+                  <th>Edit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="users" *ngFor="let user of filterdUsers; let index = index; ">
+                  <td class="username">{{ user.username }}<a href="#"></a></td>
+                  <td class="job">{{ user.job }}</td>
+                  <td class="email">{{ user.email }}</td>
+                  <td class="role">{{ user.role }}</td>
+                  <td class="departement">
+                    {{ user.departement }}<a href="#"></a>
+                  </td>
+                  <td>
+                    <a (click)="update(index)">
+                      <mat-icon>edit</mat-icon>
+                    </a>
+                    <a (click)="delete(user.id)">
+                      <mat-icon>delete</mat-icon></a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
   </div>
-
+</div>

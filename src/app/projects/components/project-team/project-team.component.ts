@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-project-team',
@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectTeamComponent implements OnInit {
   selectedProfile:boolean = false;
+  @Input() Name:String= '';
+  @Input() Job:String= '';
+  @Input() Email:String= '';
 
-  constructor() { }
+
+
+  constructor() {
+   }
 
   ngOnInit(): void {
   }

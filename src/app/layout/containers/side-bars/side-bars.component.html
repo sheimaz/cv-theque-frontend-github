@@ -1,7 +1,7 @@
 
   
   <div class="list-container">
-    <a class="sidebar-btn" routerLink="/create" routerLinkActive="sidebar-btn-active"
+    <a class="sidebar-btn" routerLink="/create" routerLinkActive="sidebar-btn-active" *ngIf="anyRole || isRespo"
     >
       <span>
         <span class="material-icons" routerLink="/create" routerLinkActive="material-icons-active"
@@ -12,11 +12,12 @@
       <span class="icon-text">Add CV</span>
     </a>
 
-    <a class="sidebar-btn" routerLink="/home" routerLinkActive="sidebar-btn-active">
+    <a class="sidebar-btn" routerLink="/home" routerLinkActive="sidebar-btn-active" *ngIf="anyRole || isRespo">
       <span>
         <span class="material-icons" routerLink="/home" routerLinkActive="material-icons-active">
-          <mat-icon>folder</mat-icon>
+          <mat-icon> file_open</mat-icon>
         </span>
+        
       </span>
       <span class="icon-text">CV</span>
     </a>
@@ -24,7 +25,7 @@
 
     
 
-    <a href="#" class="sidebar-btn" routerLink="/users" routerLinkActive="sidebar-btn-active">
+    <a href="#" class="sidebar-btn" routerLink="/users" routerLinkActive="sidebar-btn-active" *ngIf="isAdmin">
       <span>
         <span class="material-icons" routerLink="/users" routerLinkActive="material-icons-active">
           <mat-icon>group</mat-icon>
@@ -32,9 +33,9 @@
       </span>
       <span class="icon-text">Manage Users</span>
     </a>
-    <br />
+    <br *ngIf="isAdmin"/>
 
-    <a class="sidebar-btn" routerLink="/register" routerLinkActive="sidebar-btn-active">
+    <a class="sidebar-btn" routerLink="/register" routerLinkActive="sidebar-btn-active" *ngIf="isAdmin">
       <span>
         <span class="material-icons" routerLink="/register" routerLinkActive="material-icons-active">
           <mat-icon>person_add</mat-icon>
@@ -42,9 +43,9 @@
       </span>
       <span class="icon-text">Add new User</span>
     </a>
-    <br />
+    <br *ngIf="isAdmin"/>
 
-    <a href="#" class="sidebar-btn" routerLink="/projects" routerLinkActive="sidebar-btn-active">
+    <a href="#" class="sidebar-btn" routerLink="/projects" routerLinkActive="sidebar-btn-active" *ngIf="isRespo">
       <span>
         <span class="material-icons" routerLink="/projects" routerLinkActive="material-icons-active">
           <mat-icon>folder</mat-icon>

@@ -22,6 +22,11 @@ export class ProjectsService {
   setProject(project: any){
     this.project = project;
   }
+  getProjectDep(){
+    console.log("first");
+    console.log(this.project);
+    return this.project.secteur;
+  }
    /* Getting All projects */
    getAllProject(): Observable<any> {
     
@@ -33,10 +38,11 @@ export class ProjectsService {
     });
   }
 
-  createproject(title: string, description: string) {
-    return this.http.post(`${this.API_URL}/projects`, {title, description}, {
+  createproject(project:any) {
+    console.log(project)
+    return this.http.post(`${this.API_URL}/projects`, {...project}, {
       headers: {
-        Authorization: `Bearer ${this.token}`
+        Authorization: `Bearer ${localStorage.getItem("act")}`
       }
     });
   }

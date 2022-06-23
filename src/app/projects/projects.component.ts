@@ -1,3 +1,4 @@
+import { Departement } from './../users/user';
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from './services/projects.service';
 
@@ -14,7 +15,7 @@ export class ProjectsComponent implements OnInit {
   headerTitle: string = "Projects Manager";
   filesNumber: string = 0 + " project";
   showPanel: boolean = false;
-  btnText: string = "Upload Project"
+  btnText: string = "Add Project"
   projects: any = [{status:'done', title:'DUKHAN Omnichannel',description:'It’s an omnichannel banking solution that provides a variety of product and services to meet all customers’ needs, with maintaining the respect of a solid controlling and the assuring quality. This solution is developed through the last techniques and bank innovative fields where the customers can get Sharia compliance services through web and mobile applications.'
   ,date:'24/05/2022',team:15},{status:'inprogress',title:'PROXYM CVtheque',description:'solution that provides a variety of product and services to meet all customers’ needs, with maintaining the respect of a solid controlling and the assuring quality. This solution is developed through the last techniques and bank innovative fields where the customers can',date:'24/05/2023',team:7},{status:'done',title:'Facebook clone',description:'where the customers can get Sharia compliance services through web and mobile applications',date:'24/05/2022',team:13}];//TO SHOW SAVED DATA ;
   searchValue = '';
@@ -27,10 +28,12 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.pjrService.getAllProject().subscribe((pjt) => {
+      console.log(pjt);
       this.projects = pjt;
       this.filteredProjects = pjt;
       this.filesNumber = this.projects.length + " projects";
     })
+  
 
   }
 
@@ -50,10 +53,47 @@ export class ProjectsComponent implements OnInit {
     }
   }
 
+  onDepChange(event: any){
+    console.log("from Project",event)
+    this.filteredProjects = this.projects;
+    // if (event.length !== 0) {
+    //   this.filteredProjects = this.filteredProjects.filter(
+    //     el => {
+    //       return el.secteur == event;
+    //     }
+    //     );
+    //   console.log(this.filteredProjects);
+    // } else {
+    //   this.filteredProjects = this.projects;
+    // }
+    if (event.length !== 0) {
+    this.filteredProjects = this.filteredProjects.filter(function(item) {
+      for (var key in event) {
+        console.log("array KEy "+key)
+        if (item.secteur === event[key])
+          return true;
+      }
+      return false;
+    });
+    } else {
+     this.filteredProjects = this.projects;
+  }
+  }
+
   // tslint:disable-next-line:typedef
   openDialog() {
     //this.showPanel = !this.showPanel;
     this.addFormShow = !this.addFormShow;
+    if(this.addFormShow){
+      this.btnText = "Save project"
+    }else{
+      this.btnText = "Add project"
+    }
+    this.pjrService.getAllProject().subscribe((pjt) => {
+      this.projects = pjt;
+      this.filteredProjects = pjt;
+      this.filesNumber = this.projects.length + " projects";
+    })
 
   }
 

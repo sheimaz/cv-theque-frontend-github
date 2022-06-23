@@ -21,6 +21,7 @@ export class ProjectCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
   onShowMore(){
     this.showMoreText = !this.showMoreText
